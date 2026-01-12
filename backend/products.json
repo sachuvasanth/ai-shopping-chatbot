@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Backpack",
+    "price": 2499,
+    "description": "Durable backpack suitable for daily use, travel, and college.",
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "name": "Headphones",
+    "price": 1999,
+    "description": "Wireless noise-cancelling headphones with long battery life.",
+    "stock": 8
+  },
+  {
+    "id": 3,
+    "name": "Smart Watch",
+    "price": 3499,
+    "description": "Fitness tracking smartwatch with heart-rate monitoring.",
+    "stock": 4
+  },
+  {
+    "id": 4,
+    "name": "Bluetooth Speaker",
+    "price": 2799,
+    "description": "Portable Bluetooth speaker with deep bass and water resistance.",
+    "stock": 6
+  },
+  {
+    "id": 5,
+    "name": "Laptop Stand",
+    "price": 1499,
+    "description": "Ergonomic aluminum laptop stand for better posture.",
+    "stock": 10
+  },
+  {
+    "id": 6,
+    "name": "Wireless Mouse",
+    "price": 999,
+    "description": "Compact wireless mouse with adjustable DPI.",
+    "stock": 12
+  }
+]
