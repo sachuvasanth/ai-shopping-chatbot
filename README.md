@@ -4,6 +4,19 @@
 This project is a simple shopping chatbot that allows users to browse products,
 ask product-related questions, add items to a cart, and confirm an order through chat.
 
+## Live Demo
+
+- Frontend (Vercel): ai-shopping-chatbot-livid.vercel.app
+- Backend API (Render): https://ai-shopping-chatbot-v9yc.onrender.com
+- 
+## Setup Instructions
+
+### Backend
+1. Navigate to `backend`
+2. Install dependencies:
+   ```bash
+   npm install
+
 ## Features
 - Product data stored in JSON
 - List available products
