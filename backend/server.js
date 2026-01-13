@@ -206,23 +206,7 @@ app.post("/chat", async (req, res) => {
       // continue to fallback
     }
   }
-  if (model) {
-    try {
-      const prompt = makeGeminiPrompt(userMessage);
-      const result = await model.generateContent(prompt);
-      const text = result.response.text();
-
-      // Safety: if Gemini returns empty
-      if (!text || text.trim().length === 0) {
-        return res.json({ reply: unknownMessage() });
-      }
-
-      return res.json({ reply: text });
-    } catch (err) {
-      // If Gemini fails, fall back to clean message
-      return res.json({ reply: unknownMessage() });
-    }
-  }
+  
   // 1️⃣1️⃣ Clean fallback (UNKNOWN INPUT)
   return res.json({
     reply: unknownMessage()
