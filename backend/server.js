@@ -110,12 +110,12 @@ app.post("/chat", async (req, res) => {
   }
 
   // 4️⃣ Show products
-  if (msg.includes("show")) {
+  if (msg.includes("show") || msg.includes("list") || msg.includes("products")) {
     return res.json({ reply: products });
   }
 
   // 5️⃣ Price question
-  if (msg.includes("price")) {
+  if (msg.includes("price") || msg.includes("cost")) {
     const product = findProduct(msg);
     if (product) {
       return res.json({
@@ -139,13 +139,14 @@ app.post("/chat", async (req, res) => {
   if (
     msg.includes("what should i buy") ||
     msg.includes("recommend") ||
-    msg.includes("suggest")
+    msg.includes("suggest") ||
+    msg.includes("suggestion")
   ) {
     return res.json({ reply: recommendProducts() });
   }
 
   // 8️⃣ Add to cart
-  if (msg.includes("add")) {
+  if (msg.startsWith("add") || msg.includes("add")) {
     const product = findProduct(msg);
 
     if (!product) {
@@ -205,7 +206,23 @@ app.post("/chat", async (req, res) => {
       // continue to fallback
     }
   }
+  if (model) {
+    try {
+      const prompt = makeGeminiPrompt(userMessage);
+      const result = await model.generateContent(prompt);
+      const text = result.response.text();
 
+      // Safety: if Gemini returns empty
+      if (!text || text.trim().length === 0) {
+        return res.json({ reply: unknownMessage() });
+      }
+
+      return res.json({ reply: text });
+    } catch (err) {
+      // If Gemini fails, fall back to clean message
+      return res.json({ reply: unknownMessage() });
+    }
+  }
   // 1️⃣1️⃣ Clean fallback (UNKNOWN INPUT)
   return res.json({
     reply: unknownMessage()
