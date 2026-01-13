@@ -6,7 +6,7 @@ ask product-related questions, add items to a cart, and confirm an order through
 
 ## Live Demo
 
-- Frontend (Vercel): ai-shopping-chatbot-livid.vercel.app
+- Frontend (Vercel): https://ai-shopping-chatbot-livid.vercel.app
 - Backend API (Render): https://ai-shopping-chatbot-v9yc.onrender.com
 - 
 ## Setup Instructions
