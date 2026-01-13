@@ -16,7 +16,8 @@ ask product-related questions, add items to a cart, and confirm an order through
 2. Install dependencies:
    ```bash
    npm install
-
+3. Start server:
+   node server.js
 ## Features
 - Product data stored in JSON
 - List available products
